@@ -25,21 +25,19 @@ formData.addEventListener("submit", (e) => {
     juma_3,
   ];
   console.log(masjid);
-  const data = JSON.stringify(masjid);
+  const options = {
+    method: "POST",
+    body: masjid,
+    headers: {
+      "Content-Type": "text/plain;charset=utf-8",
+    },
+  };
 
-  const xhr = new XMLHttpRequest();
-  xhr.withCredentials = true;
-
-  xhr.addEventListener("readystatechange", function () {
-    if (this.readyState === this.DONE) {
-      console.log(this.responseText);
-    }
-  });
-
-  xhr.open(
-    "POST",
-    "https://script.google.com/macros/s/AKfycbzspH9SNw5Y_AndpX7m7QdevMGuyXaaYgvhO582XWqOLFgmfdgAsOIpo4lEAfJSx8lO/exec"
-  );
-
-  xhr.send(data);
+  fetch(
+    "https://script.google.com/macros/s/AKfycbwdlEeaioow9F1Zf2ebxZM3mCN6od-_yIzC8mUlKvH2R5FI1PpTnr7v49g3K0jwwCGr/exec",
+    options
+  )
+    .then((response) => response.json())
+    .then((response) => console.log(response))
+    .catch((err) => console.error(err));
 });
