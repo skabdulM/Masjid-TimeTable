@@ -12,7 +12,7 @@ formData.addEventListener("submit", (e) => {
   let juma_2 = document.getElementById("juma_2").value;
   let juma_3 = document.getElementById("juma_3").value;
   const masjid = [
-    ,
+    `=ROW()`,
     masjidName,
     areaName,
     fajr,

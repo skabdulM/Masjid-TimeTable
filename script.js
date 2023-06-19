@@ -1,7 +1,7 @@
 const options = { method: "GET" };
 
 fetch(
-  "https://script.google.com/macros/s/AKfycbwwvhdAy6iBAs3yEuuZgaezFRHn-DbrJksU9_V-dl1TUp9RQ11dSoNBhILk-ip7gPmf/exec",
+  "https://script.google.com/macros/s/AKfycbyp_xPFdzOgGO02KagE_5fpgtKvKqhCLE2R8TGlQjFlIjS1a7c5n4J7du_TqiG3HVJ3/exec",
   options
 )
   .then((response) => response.json())
@@ -22,17 +22,24 @@ fetch(
       var cell10 = row.insertCell(9);
       var cell11 = row.insertCell(10);
       // cell1.innerHTML = element.sr_no;
+
       cell1.innerHTML = `<th scope="row">${element.sr_no}</th> `;
       cell2.innerHTML = element.masjidName;
       cell3.innerHTML = element.Area;
-      cell4.innerHTML = element.Fajr;
-      cell5.innerHTML = element.zuhar;
-      cell6.innerHTML = element.asr;
-      cell7.innerHTML = element.magrib;
-      cell8.innerHTML = element.isha;
-      cell9.innerHTML = element.Juma_1;
-      cell10.innerHTML = element.Juma_2;
-      cell11.innerHTML = element.Juma_3;
+      cell4.innerHTML = new Date(element.Fajr).toLocaleTimeString();
+      cell5.innerHTML = new Date(element.zuhar).toLocaleTimeString();
+      cell6.innerHTML = new Date(element.asr).toLocaleTimeString();
+      cell7.innerHTML = new Date(element.magrib).toLocaleTimeString();
+      cell8.innerHTML = new Date(element.isha).toLocaleTimeString();
+      cell9.innerHTML = new Date(element.Juma_1).toLocaleTimeString();
+      cell10.innerHTML =
+        element.Juma_2.length != 0
+          ? new Date(element.Juma_2).toLocaleTimeString()
+          : "NA";
+      cell11.innerHTML =
+        element.Juma_3.length != 0
+          ? new Date(element.Juma_3).toLocaleTimeString()
+          : "NA";
     }
 
     console.log(response);
