@@ -27,17 +27,21 @@ formData.addEventListener("submit", (e) => {
   console.log(masjid);
   const options = {
     method: "POST",
-    body: masjid,
+    mode: "no-cors",
+    cache: "no-cache",
+    credentials: "omit",
     headers: {
-      "Content-Type": "text/plain;charset=utf-8",
+      "Content-Type": "application/json",
     },
+    redirect: "follow",
+    body: JSON.stringify(masjid),
   };
 
   fetch(
-    "https://script.google.com/macros/s/AKfycbwdlEeaioow9F1Zf2ebxZM3mCN6od-_yIzC8mUlKvH2R5FI1PpTnr7v49g3K0jwwCGr/exec",
+    "https://script.google.com/macros/s/AKfycbyp_xPFdzOgGO02KagE_5fpgtKvKqhCLE2R8TGlQjFlIjS1a7c5n4J7du_TqiG3HVJ3/exec",
     options
   )
-    .then((response) => response.json())
+    // .then((response) => response.json())
     .then((response) => console.log(response))
     .catch((err) => console.error(err));
 });
