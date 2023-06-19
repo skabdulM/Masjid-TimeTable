@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+    <title>Masjid time-table</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Add a Masjid Time-Table</h2>
+      <form action="" id="addMasjid">
+        <div class="form-group">
+          <label for="usr">Name:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="masjidName"
+            name="masjidName"
+          />
+          <label for="usr">Select Fajr Time:</label>
+          <input
+            type="time"
+            id="fajr"
+            class="form-control"
+            placeholder="Enter your Password..."
+          />
+          <label for="usr">Select Zuhar Time:</label>
+          <input
+            type="time"
+            id="zuhar"
+            class="form-control"
+            placeholder="Enter your Password..."
+          />
+          <label for="usr">Select Asr Time:</label>
+          <input
+            type="time"
+            id="asr"
+            class="form-control"
+            placeholder="Enter your Password..."
+          />
+          <label for="usr">Select Magrib Time:</label>
+          <input
+            type="time"
+            id="magrib"
+            class="form-control"
+            placeholder="Enter your Password..."
+          />
+          <label for="usr">Select Isha Time:</label>
+          <input
+            type="time"
+            id="isha"
+            class="form-control"
+            placeholder="Enter your Password..."
+          />
+          <label for="usr">Select Juma Jamat 1 Time:</label>
+          <input type="time" id="juma_1" class="form-control" />
+          <label for="usr">Select Juma Jamat 2 Time:</label>
+          <input type="time" id="juma_2" class="form-control" />
+          <label for="usr">Select Juma Jamat 3 Time:</label>
+          <input type="time" id="juma_3" class="form-control" />
+        </div>
+        <button id="button1" type="submit" class="btn btn-default">Add</button>
+      </form>
+    </div>
+  </body>
+  <script src="addform.js"></script>
+</html>
