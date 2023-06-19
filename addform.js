@@ -11,7 +11,8 @@ formData.addEventListener("submit", (e) => {
   let juma_1 = document.getElementById("juma_1").value;
   let juma_2 = document.getElementById("juma_2").value;
   let juma_3 = document.getElementById("juma_3").value;
-  const masjid = {
+  const masjid = [
+    ,
     masjidName,
     areaName,
     fajr,
@@ -22,6 +23,15 @@ formData.addEventListener("submit", (e) => {
     juma_1,
     juma_2,
     juma_3,
-  };
+  ];
   console.log(masjid);
+  const options = { method: "POST", body: masjid };
+
+  fetch(
+    "https://script.google.com/macros/s/AKfycbzspH9SNw5Y_AndpX7m7QdevMGuyXaaYgvhO582XWqOLFgmfdgAsOIpo4lEAfJSx8lO/exec",
+    options
+  )
+    .then((response) => response.json())
+    .then((response) => console.log(response))
+    .catch((err) => console.error(err));
 });
